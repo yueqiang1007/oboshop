@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oboshop.user.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.oboshop.user.entity.User">
+        <id column="uid" jdbcType="INTEGER" property="uid"/>
+        <result column="userName" jdbcType="VARCHAR" property="username"/>
+        <result column="passWord" jdbcType="VARCHAR" property="password"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        uid,userName,passWord
+    </sql>
+    <insert id="save" parameterType="com.oboshop.user.entity.User">
+        INSERT INTO  USER (uid,username,password) VALUES (0,#{userName},#{passWord})
+</insert>
+</mapper>
